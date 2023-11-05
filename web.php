@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,6 @@ Route::get('/division/{n1}/{n2}', function ($n1,$n2) {
     }
 })->where('n1', '[0-9]+','n2', '[0-9]+');
 
-
-
-
+#Ruta que mande a un controlador con el nombre del visitante y salude desde la vista
+Route::get('/user/{nombre?}', [UserController::class, 'index'
+])->where('nombre', '[A-Za-z]+');
