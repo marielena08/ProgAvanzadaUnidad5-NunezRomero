@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CarController;
 
 /*
 |--------------------------------------------------------------------------
@@ -60,3 +61,15 @@ Route::get('/division/{n1}/{n2}', function ($n1,$n2) {
 #Ruta que mande a un controlador con el nombre del visitante y salude desde la vista
 Route::get('/user/{nombre?}', [UserController::class, 'index'
 ])->where('nombre', '[A-Za-z]+');
+
+
+#----------------------------------------------------------------------------------------------------------
+
+#Ruta que mande a un controlador Act #10
+Route::get('/carritos', [CarController::class, 'index']);
+
+#Ruta que mande a un controlador Act #10
+Route::get('/carritos/{id}', [CarController::class, 'show']);
+
+
+
